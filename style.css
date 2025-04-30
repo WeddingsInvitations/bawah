@@ -16,6 +16,14 @@ html, body {
   height: 100vh;
   position: relative;
   color: white;
+  transition: transform 1s ease, opacity 1s ease;
+  z-index: 10;
+}
+
+.hero.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .overlay {
