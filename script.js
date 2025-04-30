@@ -23,12 +23,17 @@ function updateCountdown() {
 }
 
 function openInvitation() {
-  document.body.style.overflow = "auto";
-  document.getElementById('navbar').classList.add('show');
-  document.getElementById('bg-music').play();
-  document.getElementById('home').scrollIntoView({ behavior: "smooth" });
-}
+  // Sembunyikan hero dengan animasi
+  document.querySelector('.hero').classList.add('hide');
 
+  // Aktifkan scroll & navbar setelah delay animasi
+  setTimeout(() => {
+    document.body.style.overflow = "auto";
+    document.getElementById('navbar').classList.add('show');
+    document.getElementById('bg-music').play();
+    document.getElementById('home').scrollIntoView({ behavior: "smooth" });
+  }, 1000); // tunggu animasi 1 detik
+}
 
 // Highlight navbar saat scroll
 window.addEventListener("scroll", () => {
